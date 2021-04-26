@@ -30,6 +30,14 @@ $('nav a').click(function(){
   }
 })
 
+if(document.body.classList.contains('login-guest')){
+  const form = document.querySelector('form');
+   form.addEventListener('submit',function(e){
+    e.preventDefault();
+    location.href ='page-main.html';
+   })
+}
+
 function removeItems(){
   $('li').addClass('remove');
   $('.'+curr).removeClass('remove');
@@ -45,3 +53,11 @@ form.addEventListener('submit',function(e){
   e.preventDefault();
   alert('Form submitted. Thanks, ' + firstname.value + ' ' + lastname.value);
 })
+
+var elem = document.querySelector('.main-carousel');
+var flkty = new Flickity( elem, {
+  cellAlign: 'left',
+  contain: true,
+  pageDots: false
+});
+

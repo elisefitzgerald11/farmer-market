@@ -6,36 +6,47 @@ body {
   height: 100vh;
   padding: 1rem 0 1rem 1rem;
   background-color: #FFF8DD;
-  font-family: 'Bodoni Moda', serif;
+ font-family: 'Bodoni Moda', serif;
 }
 
 /*** START PAGE CSS  */
 
 body.index{
-  justify-content: center;
   padding:2rem;
   text-align:center;
   font-family: 'Bodoni Moda', serif;
-  margin:2rem;
+  align-content: center;
+  display: grid;
+  place-items:center;
 }
 
-h1 img{
-  max-width: 40%;
+.index main{
+  display:block;
+  width:100%;
+}
+
+.index h1 img{
+  height:20rem;
 }
 
 .index p{
- text-align:center;
- font-size: 2rem;
- padding:2rem;
- margin:0;
+  text-align:center;
+  font-size: 2rem;
+  padding:2rem;
+  margin:0;
+  color:#2D7F54;
 }
-.start a{
-  text-decoration:none;
+.index a{
   padding:1rem;
   display:inline-block;
   color:#2D7F54;
   text-align:center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  background-color:#2D7F54;
+  border-radius:.50rem;
+  text-decoration:none; 
+  line-height:1;
+  color:#fff;
 }
 
 
@@ -44,11 +55,16 @@ h1 img{
 body.login{
   display:grid;
   grid-template-columns:1fr;
-  grid-template-rows:1fr;
   place-items: center;
   padding:2rem;
   text-align:center;
   font-family: 'Bodoni Moda', serif;
+}
+
+.links{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:1rem;
 }
 
 .links a{
@@ -59,8 +75,6 @@ body.login{
   text-decoration:none; 
   line-height:1;
   color:#fff;
-  width:70%;
-  margin:1rem;
   font-family: 'Bodoni Moda', serif;
   font-size:1rem;
   border-style:none;
@@ -75,12 +89,12 @@ body.login{
 }
 
 .login h1 img{
-  max-width: 60%;
+  height:20rem;
 }
 
 /*** LOGIN-GUEST PAGE CSS  */
  
- .login-guest body {
+  body.login-guest {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -88,19 +102,33 @@ body.login{
   height: 100vh;
   font-family: 'Bodoni Moda', serif;
   font-size:1rem;
+
+}
+
+.login-guest h1 img{
+  height:20rem;
+}
+
+ main.login-guest{
+  display: grid;
+  place-items: center;
 }
 
  .login-guest form {
-  padding: 2rem;
+  padding: 1rem;
   background-color: #2D7F54;
   border: 1px solid #2D7F54;
   border-radius: 1rem;
   width: 80vw;
-  grid-column: 1;
+  padding:2rem;
+}
+
+.login-guest h1{
+  text-align: center;
 }
 
 .login-guest p{
-font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 
@@ -167,7 +195,7 @@ button[type="reset"]:focus {
 }
 
 .login-guest h1 img{
-  max-width: 30%;
+  max-width: 75%;
 }
 
 /*** LOGIN MEMBER CSS  */
@@ -180,10 +208,12 @@ body.login-member{
   padding:2rem;
   text-align:center;
   font-family: 'Bodoni Moda', serif;
+  height:100vh;
 }
 
 .login-member h1 img{
-  max-width: 60%;
+ height:25vh;
+ width: 100vh;
 }
 
 .login-member img{
@@ -207,17 +237,18 @@ body.login-member{
   color:#fff;
 }
 
-  .page-member a{
-  padding:1rem;
+  .member-item a{
+  padding:.5rem;
   display:inline-block;
   color:#2D7F54;
   text-align:center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   background-color:#2D7F54;
   border-radius:.50rem;
   text-decoration:none; 
   line-height:1;
   color:#fff;
+  margin:.5rem;
 }
 
   .page-guest-item a{
@@ -231,18 +262,303 @@ body.login-member{
   text-decoration:none; 
   line-height:1;
   color:#fff;
+
 }
 
-/*** MAIN PAGE CSS  */
+/*** MAIN & GUEST PAGE CSS  */
 
-.page-main body {
-  display: grid;
-  grid-template-columns: 1fr ;
-  grid-template-rows: 1fr;
-  place-items: center;
+
+body.page-main{
   height: 100vh;
-  font-family: 'Bodoni Moda', serif;
-  font-size:1rem;
+  padding: 1rem 0 1rem 1rem;
+  color: #000;
+}
+
+.page-main .main-carousel {
+  
+  height: 100%;
+  
+}
+
+.page-main .carousel-cell {
+  
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  padding-right: 1rem;
+  
+}
+
+@media screen and (min-width: 40em){
+  
+  .page-main .carousel-cell {
+    
+    width: 50%;
+  }
+  
+}
+
+@media screen and (min-width: 60em){
+  
+  .page-main .carousel-cell {
+    
+    width: 33.3333%;
+  }
+  
+}
+
+.page-main .carousel-cell img {
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.carousel-cell .text .page-main  {
+  
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 1;
+  align-self: end;
+  text-align: center;
+  padding: 1rem;
+  line-height: 1;
+}
+
+.page-main a {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+   color:#fff;
+   padding:2rem;
+   font-size: 2rem;}
+
+
+.page-main .carousel-cell h1 {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+   color:#fff;
+   padding:2rem;
+   font-size: 2rem;}
+/***
+body.page-main {
+  height: 100vh;
+  display: grid;
+}
+
+.page-main main {
+  width: 100%;
+  columns: 3;
+  column-gap: 1rem;
+  place-items: center;
+
+}
+
+.page-main main img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+
+.page-main.intro{
+  grid-column: 1/-1;
+
+}
+
+.image {
+   position: relative;
+}
+
+.page-main h1 {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+   color:#fff;
+   padding:2rem;
+  }
+.page-main a {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+   color:#fff;
+   padding:2rem;
+   font-size: 2rem;}
+*/
+
+
+body .page-main-member{
+  height: 100vh;
+  padding: 1rem 0 1rem 1rem;
+  color: #000;
+}
+
+.page-main-member .main-carousel {
+  height: 50%;
+  padding-bottom: 2rem;
+}
+
+.page-main-member .carousel-cell {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  padding-right: 1rem;
+}
+
+@media screen and (min-width: 40em){
+  
+  .page-main-member .carousel-cell {
+    
+    width: 50%;
+  }
+  
+}
+
+@media screen and (min-width: 60em){
+  
+  .page-main-member .carousel-cell {
+    
+    width: 33.3333%;
+  }
+  
+}
+
+
+
+
+.page-main-member .carousel-cell img {
+  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.carousel-cell .text .page-main-member  {
+  
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 1;
+  align-self: end;
+  text-align: center;
+  padding: 1rem;
+  line-height: 1;
+}
+
+
+.page-main-member a {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+   color:#fff;
+   padding:2rem;
+   font-size: 2rem;}
+
+
+.page-main-member .carousel-cell h1 {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+   color:#fff;
+   padding:2rem;
+   font-size: 2rem;}
+
+   /*** MEMBER MAIN PAGE CSS  */
+
+body .page-main-member {
+  height: 100vh;
+  display: grid;
+  margin:2rem;
+  grid-template-rows: 1fr ;
+  padding: 2rem;
+}
+
+.page-main-member main {
+  width: 100%;
+  height: 100%;
+  columns: 6;
+  column-gap: 1rem;
+  place-items: center;
+  padding:2rem;
+
+}
+.page-main-member main img {
+  width: 50vh;
+  height: 50vh;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  grid-row: 2;
+  padding:.5rem;
+
+}
+
+
+.image {
+   position: relative;
+}
+
+.page-main-member main h1 {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
+   margin: 0 auto;
+   width: 300px;
+   height: 50px;
+   color:#fff;
+   padding:2rem;
+   font-size: 1rem;
+   grid-row: 1;
+   padding-bottom: 2rem;}
+
+
+/*** HOME MEMBER ITEM PAGE CSS  */ 
+ 
+
+ body.member-item{
+  padding: 2rem;
+  background-color: #FFF8DD;
+  color: #333;
+  height:100vh;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+
+}
+
+.intro{
+  grid-column: 1/-1;
 }
 
 .main-carousel {
@@ -275,6 +591,8 @@ body.login-member{
   color: #000;
   font-size: 1.5rem
   z-index:1;
+  font-size: 1rem;
+  margin:.5rem;
     }
     
 .carousel-cell p {
@@ -351,17 +669,24 @@ footer button {
 
 /*** PRODUCE PAGE CSS  */ 
 
-.produce main, nav {
-  padding: 2rem 2rem 0;
+.produce .intro{
+  margin:2rem;
+  font-size:1.5rem;
 }
 
-.produce a{text-decoration: none;
+.produce main, nav {
+  padding: 2rem 2rem 0;
+
+}
+
+.produce a{
+    text-decoration: none;
     padding-bottom: .25rem;
-    border-bottom: .25rem solid #fff;
     display: inline-block;
     color: #000;
+    border-bottom: 1.5px solid #ccc;
+    font-size:1.5rem;
     margin-right: .5rem;
-
 }
 
 .produce nav {
@@ -389,11 +714,11 @@ footer button {
 }
 
 .produce ul {
-  display: grid;
-  grid-gap: 1.5rem;
+  columns:2;
   margin: 0;
   padding: 0;
   list-style: none;
+
 
   @media screen and (min-width: 30em){
     grid-template-columns: repeat(2,1fr);
@@ -407,30 +732,31 @@ footer button {
 }
 
   li {
-  background-color: #ccc;
-  padding: 1px;
-  height: 10vh;
+  background-color: #2D7F54;
+  margin-bottom:1.5rem;
   transition: all .4s;
   padding: 1rem;
   transform: scale(1);
   border-radius: .5rem;
-  color: #fff;}
+  color: #000;
+}
   .produce h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
+
   }
 }
 
 .season {
-  background-color: ;
+  background-color: #2D7F54; 
 }
 
 .fruit{
-  background-color: #ccc;
+  background-color: #2D7F54;
 }
 
 .veggie {
-  background-color: green;
+  background-color:#2D7F54;
 }
 
 .hide {
@@ -444,7 +770,6 @@ footer button {
   /*** PRODUCE PAGE CSS  */ 
 
   .item body{
-
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -472,8 +797,8 @@ footer button {
   grid-column:1;
   grid-row:1;
   animation-name: fadein;
-  animation-duration: 3s;
-  animation-delay: 2s;
+  animation-duration: 0s;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
@@ -489,9 +814,10 @@ footer button {
   padding:1rem;
   font-size:1.25rem;
   animation-name: fadein;
-  animation-duration: 3s;
-  animation-delay: 1.5s;
+  animation-duration: 0s;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
+  padding-bottom:2rem;
 }
 
 .item h1{
@@ -500,8 +826,8 @@ footer button {
   margin:1rem;
   font-size:2rem;
   animation-name: fadein;
-  animation-duration: 3s;
-  animation-delay: 1s;
+  animation-duration: 0s;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
 }
 
@@ -514,9 +840,22 @@ footer button {
   border:1rem;
   background:#fff;
   animation-name: fadein;
-  animation-duration: 3s;
-  animation-delay: 2.5s;
+  animation-duration: 0s;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
+  text-decoration:none;
+  padding:1rem;
+  display:inline-block;
+  background-color:#2D7F54;
+  text-align:center;
+  font-size: 1rem;
+  color:#fff;
+}
+
+
+.item h2{
+ text-align: left;
+grid-column: 1fr;
 }
 
 @keyframes fadein {
@@ -533,15 +872,13 @@ footer button {
   /*** CART PAGE CSS  */ 
 
 
- .checkout body {
-
+ body.checkout{
   padding: 2rem;
-  background-color: #ccc;
+  background-color: #FFF8DD;
   color: #333;
   height:100vh;
   display:grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: auto 2fr 1fr;
+  grid-template-columns:2fr 1fr;
 }
 
   .checkout header {
@@ -634,20 +971,61 @@ border-bottom: 1px #ccc;
   padding-bottom: 1rem;
   padding-top: 1rem;
   margin:1rem;
+  color:#fff;
 }
 
   footer ul li: last-child span:first-child {
   font-weight: 700;
 }
 
-   footer button {
-  
-  border: none;
-  padding:0;
-  line-height: 3;
-  border-radius: 3rem;
-  font-size: 1.25rem;
-  background-color:#ee6f3f;
-  color:#fff; 
+   footer a {
+  padding:1rem;
+  display:inline-block;
+  text-align:center;
+  font-size: 1.5rem;
+  background-color:#2D7F54;
+  border-radius:.50rem;
+  text-decoration:none; 
+  line-height:1;
+  color:#fff;
+}
+
+body.confirm {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+  padding: 3rem;
+  background-color: #FFF8DD;
+  text-align: center;
+}
+
+main.confirm {
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: .25rem;
+  width: 80vw;
+  @media screen and (min-width: 40em){
+    width: 50vw;
+  }
+}
+
+.confirm h1 img {
+  max-width: 75%;
+}
+
+.confirm a{
+ padding:1rem;
+  display:inline-block;
+  color:#2D7F54;
+  text-align:center;
+  font-size: 1.5rem;
+  background-color:#2D7F54;
+  border-radius:.50rem;
+  text-decoration:none; 
+  line-height:1;
+  color:#fff;
+  margin:1rem;
 }
 
